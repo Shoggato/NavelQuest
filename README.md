@@ -1,7 +1,7 @@
 # belly-button-challenge
 
 ![BellyButton_DashBoard](images/overviewDashboard.png)
-https://shoggato.github.io/belly-button-challenge/
+
 
 # Background
 
@@ -13,10 +13,12 @@ The dataset reveals that a small handful of microbial species (also called opera
 This assignment has several folders:
 
 The main directory has the samples.json which has a copy of the data from the url (https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json).
-The main directory also has the index.html folder which has the structure of the the app.  The images folder holds several snap shots of my Dashboard that I have then used in my readme.  The static/js/app.js holds my javascript which took the samples.json and the index.html and made a functional Dashboard.
+The main directory also has the index.html folder which has the structure of the the app.  The images folder holds several snap shots of my Dashboard that I have then used in my readme.  
+
+The static/js/app.js holds my javascript which took the samples.json and the index.html and made a functional Dashboard.
 
 My app was also deployed to github pages! see below for the link:
-
+https://shoggato.github.io/belly-button-challenge/
 
 
 # Dashboard
