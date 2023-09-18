@@ -67,7 +67,8 @@ function createBarChart(data) {
     let layout = {
         title: 'Top 10 OTUs',
         xaxis: {title: 'OTU Values'},
-        yaxis: {title: 'OTU ID'}
+        yaxis: {title: 'OTU ID'},
+        width: 600
     };
 
     Plotly.newPlot('bar', [trace], layout);
@@ -98,7 +99,9 @@ function createBubbleChart(data) {
         title: 'OTU Bubble Chart',
         showlegend: false,
         xaxis: {title: 'OTU ID'},
-        yaxis: {title: 'OTU Values'}
+        yaxis: {title: 'OTU Values'},
+        height: 600,
+        width: 1200
     };
 
     Plotly.newPlot('bubble', [trace], layout);
