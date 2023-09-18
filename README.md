@@ -1,6 +1,7 @@
 # belly-button-challenge
 
 ![BellyButton_DashBoard](images/overviewDashboard.png)
+https://shoggato.github.io/belly-button-challenge/
 
 # Background
 
@@ -46,6 +47,8 @@ It appears that the greater the frequency of washings occurs the less bacteria i
 
 # Deployed app
 github pages link below:
+
+https://shoggato.github.io/belly-button-challenge/
 
 
 
