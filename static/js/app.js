@@ -43,7 +43,7 @@ function updateDemographicInfo(metadata) {
     const metadataPanel = d3.select('#sample-metadata');
     metadataPanel.html(''); //this clears out previous data table
     
-    // iterate through metadata and display key-value pairs
+    // iterate through metadata and display key-value pairs, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
     Object.entries(metadata).forEach(([key, value]) => {
         metadataPanel.append('p').text(`${key}:${value}`);
     });
