@@ -34,10 +34,7 @@ function optionChanged(selectedIndividual, data) {
     createBubbleChart(individualData);
 
     // create guage chart
-    createGaugeChart();
-
-    // create gauge needle
-    createGaugeNeedle(metadata);
+    createGaugeChart(metadata);
     });
 }
 
@@ -57,7 +54,8 @@ function createBarChart(data) {
     let sample_values = data.sample_values;
     let otu_ids = data.otu_ids;
     let otu_labels = data.otu_labels;
-
+// slice the first 10 values that were the highest, use .reverse() since they are ordered
+// smallest to largest
     let trace = {
         x: sample_values.slice(0, 10).reverse(),
         y: otu_ids.slice(0, 10).map(id => `OTU: ${id}`).reverse(),
@@ -68,6 +66,8 @@ function createBarChart(data) {
 
     let layout = {
         title: 'Top 10 OTUs',
+        xaxis: {title: 'OTU Values'},
+        yaxis: {title: 'OTU ID'}
     };
 
     Plotly.newPlot('bar', [trace], layout);
@@ -98,56 +98,30 @@ function createBubbleChart(data) {
         title: 'OTU Bubble Chart',
         showlegend: false,
         xaxis: {title: 'OTU ID'},
+        yaxis: {title: 'OTU Values'}
     };
 
     Plotly.newPlot('bubble', [trace], layout);
 }
 
-// function createGaugeNeedle(metadata) {
-//     let wfreq = metadata.wfreq;
-
-//     // Calculate the angle for the needle
-//     let angle = (wfreq / 10) * 180;
-    
-//     let needle = [
-//         {
-//             title: {text: 'Scrubs per Week'},
-//             type: 'indicator',
-//             mode: 'gauge',   
-//             layout: {
-//                 x: 0.5,
-//                 y: 0.5,
-//                 shapes: [
-//                     {
-//                         type: 'path',
-//                         path: getPathForNeedle(angle),
-//                         fillcolor: "#1ecefa",
-//                         line: {
-//                             color: "#000000"
-//                         }
-//                     }
-//                 ]
-//             }
-//         }
-//     ]
-
-//     Plotly.newPlot('gauge', needle, layout);
-// }
-
 // display the default gauge chart
 function createGaugeChart(metadata) {
-
     let wfreq = metadata.wfreq;
-// Calculate the angle for the needle
-    let angle = (wfreq / 10) * 180;
-
     let backgroundData = [
         {
-            title: {text: 'Belly Button Washing Frequency'},
+            title: {text: 'Belly Button Washing Frequency<br>Scrubs per Week'},
+            annotations: {text: 'Swabs per Week'},
+            value: wfreq,
             type: 'indicator',
-            mode: 'gauge',
+            mode: 'gauge+number',
+            layout: {
+                xaxis: {title: 'Swabs per Week'},
+                height: 600,
+                width: 600
+            },
             gauge: {
                 shape: 'angular',
+                bar: {color: '#361191'},
                 axis: {
                     align: 'center',
                     range: [0, 10],
@@ -167,31 +141,10 @@ function createGaugeChart(metadata) {
                     {range: [9, 10], color: '#ff0066'},
                 ],
             },
-            layout: {
-                x: 0.5,
-                y: 0.5,
-                shapes: [
-                    {
-                    type: 'path',
-                    path: getPathForNeedle(angle),
-                    fillcolor: "#1ecefa",
-                    line: {
-                    color: "#000000"
-                    }
-                }
-            ]
         }
-    }];
-    Plotly.newPlot('gauge', backgroundData, layout);
-}
-
-// Helper function to calculate the path for the needle
-function getPathForNeedle(angle) {
-    const radians = ((angle - 90) * Math.PI) / 180;
-    const x = 0.04 * Math.cos(radians);
-    const y = 0.04 * Math.sin(radians);
-    return `M 0 0 L ${x} ${y} Z 0`;
-}
+    ]
+    Plotly.newPlot('gauge', backgroundData);
+};
 
 //initialize the dashboard
 init();
