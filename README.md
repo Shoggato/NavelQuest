@@ -22,18 +22,22 @@ My app was also deployed to github pages! see below for the link:
 <br>
 There is a drop down that will update every chart and table to the test subjects ID number.
 <br>
+
 ![Patient_Demographics](images/Demographicinfo_testSubjectDrop.png)
 <br>
 Horizontal bar graph that shows the top ten OTUs and their values.
 <br>
+
 ![Horizontal_Bar](images/horizontalBar.png)
 <br>
 Bubble Graph that has a better representation of the top ten OTUs that were found in the patients belly buttons.  The larger the circle, the greater the OTU value was.
 <br>
+
 ![Bubble_Graph](images/bubbleChart.png)
 <br>
 There is also a belly button wash guage that shows the frequency every week that each patient was instructed to wash their belly buttons.
 <br>
+
 ![BellyButton_Wash_Gauge](images/gaugeChart.png)
 <br>
 Final findings:
