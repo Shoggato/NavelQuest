@@ -28,8 +28,8 @@ The app is deployed on GitHub Pages. Visit [Belly Button Challenge](https://shog
 Observations suggest that a higher frequency of washings correlates with lower bacterial presence. However, surviving bacteria show higher frequency, possibly due to reduced competition for resources after eliminating most bacteria.
 
 ## Screenshots
-
-![Patient Demographics](images/patient_demographics.png)
-![Horizontal Bar](images/horizontal_bar.png)
-![Bubble Graph](images/bubble_graph.png)
-![Belly Button Wash Gauge](images/belly_button_wash_gauge.png)
+![Belly Button Wash Gauge](images/overviewDashboard.png)
+![Patient Demographics](images/Demographicinfo_testSubjectDrop.png)
+![Horizontal Bar](images/horizontalBar.png)
+![Bubble Graph](images/bubbleChart.png)
+![Belly Button Wash Gauge](images/gaugeChart.png)
